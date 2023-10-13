@@ -1,0 +1,37 @@
+.list {
+    margin: 0;
+    padding: 0;
+    width: 520px;
+    height: 280px;
+    overflow: scroll;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.list::-webkit-scrollbar {
+    width: 0;
+  }
+  
+.list .list-item:hover, .list-item-active{
+    background-color: #3e3e3e;
+    color: #16ad8c;
+}
+
+.list .list-item{
+    height: 70px;
+    cursor: pointer;
+    background-color: #2a2a2a;
+    border: 2px solid #3e3e3e;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 25px;
+    transition: all 0.5s ease-in-out;
+}
+
+.list .list-item:last-child{
+    border-radius: 0 0 5px 5px;
+}
+
+.list .list-item:first-child{
+    border-radius: 5px 5px 0 0;
+}

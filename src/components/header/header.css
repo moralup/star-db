@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    margin-bottom: 30px;
+    height: 100px;
+    align-items: center;
+    gap: 200px
+}
+
+.header .header-logo{
+    font-size: 50px;
+    margin-left: 15px;
+    font-family: 'Star'
+}
+
+.header .sort-list{
+    display: flex;
+    gap: 60px;
+    align-self: flex-end;
+}
+
+.header .sort-list .sort-list-item {
+    color: #16ad8c;
+    border-top: none;
+    font-size: 25px;
+    display: flex;
+
+}
+
+.header .sort-list .sort-list-item a{
+    color: #16ad8c;
+}
+
+
+.header .header-logo{
+    color: white
+}

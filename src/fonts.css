@@ -1,0 +1,20 @@
+@font-face{
+    font-family: 'Star';
+    src: url('./assets/star/star.woff') format('woff'),
+        url('./assets/star/star.ttf') format('ttf'),
+        url('./assets/star/star.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Anakinmono';
+    src: url('./assets/anakinmono/anakinmono.woff') format('woff'),
+        url('./assets/anakinmono/anakinmono.ttf') format('ttf'),
+        url('./assets/anakinmono/anakinmono.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Aurek';
+    src: url('./assets/aurek/aurek.woff') format('woff'),
+        url('./assets/aurek/aurek.ttf') format('ttf'),
+        url('./assets/aurek/aurek.otf') format('otf')
+}
