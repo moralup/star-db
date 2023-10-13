@@ -13,7 +13,13 @@ export default class Main extends Component{
             { name: 'unknown' },
             { name: 'unknown' },
             { name: 'unknown' }],
-        unknown: { name: 'unknown', gender: 'unknown', height: 'unknown', mass: 'unknown' },
+        unknown: { 
+            name: 'unknown',
+            gender: 'unknown', 
+            height: 'unknown', 
+            mass: 'unknown', 
+            url: MyImage, 
+        },
         index: 0,
     };
 
@@ -36,10 +42,6 @@ export default class Main extends Component{
             <div className="main-bottom">
                 <ItemList setIndex={this.setIndex} data={this.state.data}/>
                 <ImageWithDescription
-                    url={ this.state.index !==0 ?
-                        this.state.data[this.state.index].url : 
-                        MyImage
-                    }
                     data1={this.state.index !==0 ? 
                         this.state.data[this.state.index] :
                         this.state.unknown}
