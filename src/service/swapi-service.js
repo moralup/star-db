@@ -13,17 +13,17 @@ export default class SwapiService {
 
     async getAllPeople(){
         const people = await this.getResource('/people');
-        const result = people.results.map((person, i) => this.transformPeople(person, i+1));
-        return result;
+        return people.results.map((person, i) => this.transformPeople(person, i+1));
     }
 
-    getPerson(id){
-        return this.getResource(`/people/${id}`);
+    async getPerson(id){
+        const person = await this.getResource(`/people/${id}`);
+        return this.transformPeople(person, id);
     }
 
     async getAllPlanets(){
-        const res = await this.getResource('/planets/');
-        return res.results;
+        const planets = await this.getResource('/planets/');
+        return planets.results.map((planet, id) => this.transformPlanet(planet, id));
     }
 
     async getPlanet(id){
@@ -33,11 +33,12 @@ export default class SwapiService {
 
     async getAllStarships(){
         const res = await this.getResource('/starships/');
-        return res.results;
+        return res.results.map((starship, id) => this.transformStarship(starship, id));
     }
 
-    getStarships(id){
-        return this.getResource(`/starships/${id}`);
+    async getStarship(id){
+        const starship = await this.getResource(`/starships/${id}`);
+        return this.transformStarship(starship, id);
     }
 
     transformPlanet(planet, id){
@@ -57,6 +58,17 @@ export default class SwapiService {
             height: person.height,
             mass: person.mass,
             url: `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`,
+        }
+    }
+
+    transformStarship(starship, id){
+        return {
+            name: starship.name,
+            length: starship.length,
+            class: starship.starship_class,
+            price: starship.cost_in_credits,
+            passengers: starship.passengers,
+            url: `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`,
         }
     }
 
