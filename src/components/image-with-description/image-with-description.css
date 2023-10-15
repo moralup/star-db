@@ -20,6 +20,8 @@
 
 .image-with-description-max .image-with-description-img-max{
     border-radius: 20px;
+    width: 250px;
+    height: 250px;
 }
 
 .image-with-description-min .image-with-description-img-min{

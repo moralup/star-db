@@ -1,50 +1,31 @@
 import { Component } from 'react';
 import ItemList from '../item-list';
 import ImageWithDescription from '../image-with-description';
-import SwapiService from '../../service/swapi-service';
 import MyImage from '../../image/cat-unknown.jpg';
 import './main.css';
 
 export default class Main extends Component{
     
     state = {
-        data: [
-            { name: 'unknown' },
-            { name: 'unknown' },
-            { name: 'unknown' },
-            { name: 'unknown' }],
-        unknown: { 
+        person: { 
             name: 'unknown',
             gender: 'unknown', 
             height: 'unknown', 
             mass: 'unknown', 
             url: MyImage, 
         },
-        index: 0,
     };
 
-    constructor(){
-        super();
-        this.setData();
-    }
-    swapiService = new SwapiService();
+    getPerson = (person) => {
+        this.setState({ person })
+    };
     
-    setData = async () => {
-        const people = await this.swapiService.getAllPeople();
-        this.setState({ data: people });
-    }
-
-    setIndex = (i) => {
-        this.setState({ index: i })
-    }
     render(){
         return (
             <div className="main-bottom">
-                <ItemList setIndex={this.setIndex} data={this.state.data}/>
+                <ItemList getPerson={this.getPerson}/>
                 <ImageWithDescription
-                    data1={this.state.index !==0 ? 
-                        this.state.data[this.state.index] :
-                        this.state.unknown}
+                    data1={this.state.person}
                     size="min"/>
             </div>
         );
